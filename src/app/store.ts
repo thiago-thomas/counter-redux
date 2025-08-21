@@ -1,13 +1,14 @@
 import type { Action, ThunkAction } from "@reduxjs/toolkit"
 
-// configureStore cria uma redux store,
-// e requer um reducer como argumento
+// Criamos a store pelo "configureStore" 
 import { configureStore } from "@reduxjs/toolkit"
 import counterReducer from "@/features/counter/counterSlice"
 
 export const store = configureStore({
+  // dentro do objeto reducer 
   reducer: {
-    // Add the counter reducer to the store
+    // passamos o state global => 'counter' (state.counter)
+    // e o seu reducer responsavel => 'counterReducer'
     counter: counterReducer,
   },
 })
